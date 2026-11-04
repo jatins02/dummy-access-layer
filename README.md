@@ -1,9 +1,10 @@
 # Dummy access layer
 
-A tiny, runnable model of the PS architecture. No chain and no LLM needed: signing is real
-(eth-account), the planner is a rule-based stub, Ollama to be plugged in later.
+A tiny, runnable access layer model of the PS architecture. No chain and no LLM needed: signing is real
+(simulated with eth-account), the planner is a rule-based stub, Ollama to be plugged in later.
 
     pip install -r requirements.txt
+    python cli.py
 
 Pipeline: guard -> planner -> schema -> policy -> tx builder -> preview -> approval -> signer
 
@@ -18,5 +19,3 @@ Pipeline: guard -> planner -> schema -> policy -> tx builder -> preview -> appro
 | dal/signer.py | only holder of the key | no unchecked signing |
 | tests/test_attacks.py | attacks | resistance to attacks |
 
-Known simplifications (honest limits): signer runs in-process; approval uses a shared HMAC
-secret; seed detection is a heuristic; the stub planner is not an LLM; amounts are ETH only.
