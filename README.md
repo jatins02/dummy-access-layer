@@ -4,8 +4,6 @@ A tiny, runnable model of the PS architecture. No chain and no LLM needed: signi
 (eth-account), the planner is a rule-based stub, Ollama to be plugged in later.
 
     pip install -r requirements.txt
-    python -m pytest -q        # 17 attack tests
-    python cli.py              # interactive demo
 
 Pipeline: guard -> planner -> schema -> policy -> tx builder -> preview -> approval -> signer
 
